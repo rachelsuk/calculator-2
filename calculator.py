@@ -3,6 +3,12 @@ from functools import reduce
 
 from arithmetic import (add, subtract, multiply, divide, square, cube,
                         power, mod, )
+def my_reduce(function, numbers):
+    value = numbers[0]
+    for i in range(len(numbers)-1):
+        value = function(value,numbers[i+1])
+    return value
+
 while True:
     user_input = input("Please include operator, first number, second number?")
     tokens = user_input.split(',')
@@ -10,17 +16,17 @@ while True:
     if tokens[0]=="q":
         break
     elif tokens[0]=="+":
-        print(add(float(reduce(add, tokens_float[:-1])),tokens_float[-1]))
+        print(add(float(my_reduce(add, tokens_float[:-1])),tokens_float[-1]))
     elif tokens[0]=="-":
-        print(subtract(float(reduce(subtract, tokens_float[:-1])),tokens_float[-1]))
+        print(subtract(float(my_reduce(subtract, tokens_float[:-1])),tokens_float[-1]))
     elif tokens[0]=="*":
-        print(multiply(float(reduce(multiply, tokens_float[:-1])),tokens_float[-1]))
+        print(multiply(float(my_reduce(multiply, tokens_float[:-1])),tokens_float[-1]))
     elif tokens[0]=="/":
-        print(divide(float(reduce(divide, tokens_float[:-1])),tokens_float[-1]))
+        print(divide(float(my_reduce(divide, tokens_float[:-1])),tokens_float[-1]))
     elif tokens[0]=="**":
-        print(power(float(reduce(power, tokens_float[:-1])),tokens_float[-1]))
+        print(power(float(my_reduce(power, tokens_float[:-1])),tokens_float[-1]))
     elif tokens[0]=="%":
-        print(mod(float(reduce(mod, tokens_float[:-1])),tokens_float[-1]))
+        print(mod(float(my_reduce(mod, tokens_float[:-1])),tokens_float[-1]))
     elif tokens[0]=="**2":
         if len(tokens)==2:
             print(square(float(tokens[1])))
