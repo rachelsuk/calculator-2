@@ -8,18 +8,18 @@ while True:
     if tokens[0]=="q":
         break
     elif tokens[0]=="+":
-        print(add(int(tokens[1]), int(tokens[2])))
+        print(add(float(tokens[1]), float(tokens[2])))
     elif tokens[0]=="-":
-        print(subtract(int(tokens[1]), int(tokens[2])))
+        print(subtract(float(tokens[1]), float(tokens[2])))
     elif tokens[0]=="*":
-        print(multiply(int(tokens[1]), int(tokens[2])))
+        print(multiply(float(tokens[1]), float(tokens[2])))
     elif tokens[0]=="/":
-        print(divide(int(tokens[1]), int(tokens[2])))
+        print(divide(float(tokens[1]), float(tokens[2])))
     elif tokens[0]=="**2":
-        print(square(int(tokens[1]), int(tokens[2])))
+        print(square(float(tokens[1])))
     elif tokens[0]=="**3":
-        print(cube(int(tokens[1]), int(tokens[2])))
+        print(cube(float(tokens[1])))
     elif tokens[0]=="**":
-        print(power(int(tokens[1]), int(tokens[2])))
+        print(power(float(tokens[1]), float(tokens[2])))
     elif tokens[0]=="%":
-        print(mod(int(tokens[1]), int(tokens[2])))
+        print(mod(float(tokens[1]), float(tokens[2])))
