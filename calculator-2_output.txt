@@ -1,4 +1,7 @@
-6.00
--10.00
-120.00
-0.01
+10.00
+-8.00
+24.00
+0.04
+210.00
+not a valid command
+need to provide only one value when calculating ^3
