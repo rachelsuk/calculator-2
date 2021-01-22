@@ -9,9 +9,11 @@ def my_reduce(function, numbers):
         value = function(value,numbers[i+1])
     return float(value)
 
-while True:
-    user_input = input("Please include operator, first number, second number?")
-    tokens = user_input.split(',')
+input_file = open("calculator-2_input.txt")
+output_file = open("calculator-2_output.txt", "w")
+
+for line in input_file:
+    tokens = line.split(',')
     tokens_float = [float(i) for i in tokens[1:]]
     if tokens[0]=="q":
         break
@@ -39,9 +41,10 @@ while True:
             result = "need to provide only one value when calculating ^3"
     else:
         result = "not a valid command, try again"
-        
+
     if type(result) == float:
-        print("{:.2f}".format(result))
+        output_file.write("{:.2f}".format(result) + "\n")
     else:
-        print(result)
+        output_file.write(result + "\n")
+output_file.close()
 
